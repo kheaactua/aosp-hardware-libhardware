@@ -17,6 +17,12 @@ typedef struct opersyshw_device {
     int (*read)(const char* buffer, int length);
     int (*write)(const char* buffer, int length);
     int (*test)(int value);
+    void (*zero_content)(void);
+    bool (*is_there_content)(void);
+    long (*write_ts)(void);
+    unsigned int (*get_read_n)(void);
+    unsigned int (*get_write_n)(void);
+    void (*set_buffer_char)(char);
 } opersyshw_device_t;
 
 __END_DECLS
